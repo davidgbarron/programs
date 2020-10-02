@@ -1,13 +1,17 @@
 class Converter:
     def __init__(self):
-        self.sel = input("Please type f for Fahrenheit to Celsius, or type \
-c for Celsius to Fahrenheit. Type q to quit:")
+        self.sel = input("Please type f for Fahrenheit to Celsius, type \
+c for Celsius to Fahrenheit, or type k for Fahrenheit to Kelvin. Type q to quit:")
         if "f" in self.sel:
             Converter.far(self)
             return None
         if "c" in self.sel:
             Converter.cel(self)
             return None
+        if "k" in self.sel:
+            Converter.kel(self)
+            return None
+        
         if "q" in self.sel:
             print("\n")
             print(bye)
@@ -41,7 +45,21 @@ c for Celsius to Fahrenheit. Type q to quit:")
                 print("\n")
                 print(bye)
                 break
+    def kel(self):
+        if "k" in self.sel:
+            self.k = input("please type degrees Fahrenheit:")
+            self.k = int(self.k)
+            print((self.k - 32) * 5 / 9 + 273.15, "degrees {}".format(kdegrees))
+            print("\n")
+            self.again = input("would you like to convert something else? type y or n:")
+            if "y" in self.again:
+                Converter()
+            while "n" in self.again:
+                print("\n")
+                print(bye)
+                break
 bye = "Goodbye"
 fdegrees = "Fahrenheit"
 cdegrees = "Celsius"
+kdegrees = "Kelvin"
 Converter()
