@@ -1,4 +1,6 @@
+"""this is a simple temperature converter"""
 class Converter:
+    """this chooses which function to call to convert"""
     def __init__(self):
         self.sel = input("Please type f for Fahrenheit to Celsius, type \
 c for Celsius to Fahrenheit, or type k for Fahrenheit to Kelvin. Type q to quit:")
@@ -20,6 +22,7 @@ c for Celsius to Fahrenheit, or type k for Fahrenheit to Kelvin. Type q to quit:
             print("invalid input")
             Converter()                      
     def far(self):
+        """this defines the function to convert fahrenheit to celsius"""
         if "f" in self.sel:
             self.f = input("please type degrees Fahrenheit:")
             self.f = int(self.f)
@@ -33,6 +36,7 @@ c for Celsius to Fahrenheit, or type k for Fahrenheit to Kelvin. Type q to quit:
                 print(bye)
                 break
     def cel(self):
+        """this defines the function to convert celsius to fahrenheit"""
         if "c" in self.sel:
             self.c = input("please type degrees Celsius:")
             self.c = int(self.c)
@@ -46,6 +50,7 @@ c for Celsius to Fahrenheit, or type k for Fahrenheit to Kelvin. Type q to quit:
                 print(bye)
                 break
     def kel(self):
+        """this defines the function to convert fahrenheit to kelvin"""
         if "k" in self.sel:
             self.k = input("please type degrees Fahrenheit:")
             self.k = int(self.k)
@@ -58,6 +63,8 @@ c for Celsius to Fahrenheit, or type k for Fahrenheit to Kelvin. Type q to quit:
                 print("\n")
                 print(bye)
                 break
+"""the following defines the variables used to format, as well as calls the class/program
+to execute"""
 bye = "Goodbye"
 fdegrees = "Fahrenheit"
 cdegrees = "Celsius"
